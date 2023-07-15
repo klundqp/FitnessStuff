@@ -5,7 +5,7 @@ const store = useExcerciseOverviewStore();
 </script>
 
 <template>
-    <div class="hello">
+  <div class="overview">
     <h1>ExcerciseOverview</h1>
     <div class="input-div">
       <input type="text" v-model="store.text" placeholder="Excercise">
