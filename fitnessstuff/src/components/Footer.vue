@@ -1,12 +1,15 @@
 <script setup lang="ts">
-
+import AudioButton from "@/components/AudioButton.vue"
 </script>
+
 <template>
     <div id="container">
         <div id="cookies">
             <div id="cookies--cookies">
-            <p>Ændre cookiesamtykke</p>
-            <p>Cookie-og privatlivspolitik</p>
+            <audio-button class="footer-btn" text="Ændre cookiesamtykke"></audio-button>
+            <div class="footer-btn">
+              <router-link  to="/cookie-og-privatlivspolitik/">Cookie-og privatlivspolitik</router-link>
+            </div>
             </div>
         </div>
     </div>
@@ -19,7 +22,7 @@
   margin-top:20px;
   width:100vw;
   color:white;
-  background-color:#292354;
+  background-color:#f4f6f5;
   display:flex;
   flex-direction:column;
   align-items:center;
@@ -33,6 +36,11 @@
   width:100%;
 }
 #cookies--cookies{
-  text-align:right;
+  text-align: center;
+}
+
+.footer-btn {
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 </style>
