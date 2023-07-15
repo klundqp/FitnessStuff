@@ -1,11 +1,12 @@
 <script setup lang="ts">
+import Footer from "./components/Footer.vue"
 </script>
 
 <template>
   <div id="app">
     <!-- <NavigationBar></NavigationBar> -->
     <router-view> </router-view>
-    <!-- <ToastContainer></ToastContainer> -->
+    <Footer></Footer>
   </div>
 </template>
 
