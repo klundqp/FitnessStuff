@@ -14,6 +14,12 @@ const router = createRouter({
       name: "ExercisePage",
       meta: { securedRoute: true },
       component: () => import("../Views/ExcercisePage.vue"),
+    },
+    {
+      path: "/cookie-og-privatlivspolitik/",
+      name: "CookiePage",
+      meta: { securedRoute: true },
+      component: () => import("../Views/CookiePage.vue"),
     }
   ],
   linkActiveClass: "active",
