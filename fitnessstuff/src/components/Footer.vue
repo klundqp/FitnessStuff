@@ -6,10 +6,10 @@ import AudioButton from "@/components/AudioButton.vue"
     <div id="container">
         <div id="cookies">
             <div id="cookies--cookies">
-            <audio-button class="footer-btn" text="Ændre cookiesamtykke"></audio-button>
-            <div class="footer-btn">
-              <router-link  to="/cookie-og-privatlivspolitik/">Cookie-og privatlivspolitik</router-link>
-            </div>
+            <audio-button class="mt-2" text="Ændre cookiesamtykke"></audio-button>
+            <button class="btn btn-secondary mt-2 mb-2">
+              <router-link class="cookie-link"  to="/cookie-og-privatlivspolitik/">Cookie-og privatlivspolitik</router-link>
+            </button>
             </div>
         </div>
     </div>
@@ -39,8 +39,8 @@ import AudioButton from "@/components/AudioButton.vue"
   text-align: center;
 }
 
-.footer-btn {
-  padding-top: 8px;
-  padding-bottom: 8px;
+.cookie-link{
+  color: #fff;
+  text-decoration: none;
 }
 </style>
