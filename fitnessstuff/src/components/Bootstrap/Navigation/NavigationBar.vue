@@ -23,26 +23,11 @@ import NavItem from "./subcomponents/NavItem.vue";
       </button>
       <NavbarNav id="NavbarNav" class="ml-auto">
         <NavItem class="nav-item" :to="{ path: '/' }"
-          >Forside
+          >Main page
         </NavItem>
         <NavItem class="nav-item" :to="{ path: '/cookie-og-privatlivspolitik/' }"
-          >CookieIndstillinger
+          >Cookie and privacy policy
         </NavItem>
-        <!-- <NavItem class="nav-item" :to="{ path: '/period' }"
-          >Perioder
-        </NavItem>
-        <NavItem class="nav-item" :to="{ path: '/invoice' }"
-          >Afventende
-        </NavItem>
-        <NavItem class="nav-item" :to="{ path: '/upload' }"
-          >Upload
-        </NavItem>
-        <NavItem class="nav-item" :to="{ path: '/accountants-statements/'}">
-          Revisorerklæringer
-        </NavItem>
-        <NavItem class="nav-item" :to="{ path: '/settings/'}">
-          Indstillinger
-        </NavItem> -->
       </NavbarNav>
     </Navbar>
   </div>

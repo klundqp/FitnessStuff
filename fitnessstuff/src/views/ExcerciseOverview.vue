@@ -5,6 +5,7 @@ import Col from "@/components/Bootstrap/layout/Col.vue";
 import Row from "@/components/Bootstrap/layout/Row.vue";
 import type { TableField } from "@/components/Bootstrap/BaseTable.vue";
 import ExerciseTable from "@/components/ExerciseTable.vue";
+import TextField from "@/components/Bootstrap/TextField.vue"
 import { useExcerciseOverviewStore } from '../stores/excerciseOverviewStore';
 
 const store = useExcerciseOverviewStore();
@@ -16,36 +17,47 @@ onMounted(() => {
 const fields: TableField[] = [
   {
     key: "name",
-    label: "Navn"
+    label: "Name",
+    thClass: "text-left",
+    tdClass: "text-left vertical-center"
   },
   {
     key: "category",
-    label: "Kategori"
+    label: "Category",
+    thClass: "text-right",
+    tdClass: "text-right vertical-center"
   },
   {
     key: "force",
-    label: "Type",
+    label: "Force",
     thClass: "text-right",
-    tdClass: "text-right"
+    tdClass: "text-right vertical-center"
   },
   {
     key: "level",
-    label: "Sværhedsgrad",
+    label: "Level",
     thClass: "text-right",
-    tdClass: "text-right"
+    tdClass: "text-right vertical-center"
   },
   {
     key: "primaryMuscles",
-    label: "Primære muskelgrupper",
+    label: "Primary Muscles",
     thClass: "text-right",
-    tdClass: "text-right",
+    tdClass: "text-right vertical-center",
     sortable: false
   },
   {
     key: "secondaryMuscles",
-    label: "Sekundære muskelgrupper",
+    label: "Secondary Muscles",
     thClass: "text-right",
-    tdClass: "text-right",
+    tdClass: "text-right vertical-center",
+    sortable: false
+  },
+  {
+    key: "details",
+    label: "Details",
+    thClass: "text-right",
+    tdClass: "text-right vertical-center",
     sortable: false
   }
 ];
@@ -56,16 +68,55 @@ const fields: TableField[] = [
   <Container>
     <Row>
       <Col>
-        <h1>ExcerciseOverview</h1>
+        <h1>Excercise Overview</h1>
       </Col>
     </Row>
     <Row>
       <Col>
-        <input type="text" v-model="store.text" placeholder="Excercise">
+        <TextField
+            v-model:value="store.query.name"
+            name="name"
+            placeholder="Exercise name"
+          />
+      </Col>
+      <Col>
+        <TextField
+            v-model:value="store.query.category"
+            name="category"
+            placeholder="Exercise category"
+          />
+      </Col>
+      <Col>
+        <TextField
+            v-model:value="store.query.force"
+            name="force"
+            placeholder="Exercise force"
+          />
+      </Col>
+      <Col>
+        <TextField
+            v-model:value="store.query.level"
+            name="level"
+            placeholder="Exercise level"
+          />
+      </Col>
+      <Col>
+        <TextField
+            v-model:value="store.query.primary"
+            name="primaryMuscle"
+            placeholder="Primary muscle"
+          />
+      </Col>
+      <Col>
+        <TextField
+            v-model:value="store.query.secondary"
+            name="secondaryMuscle"
+            placeholder="Secondary muscle"
+          />
       </Col>
     </Row>
     <Row>
-      <ExerciseTable :items="store.excerciseList" :fields="fields" sortable>
+      <ExerciseTable :items="store.filteredExercises" :fields="fields" sortable>
       </ExerciseTable>
     </Row>
   </Container>
