@@ -16,45 +16,45 @@ onMounted(() => {
 const fields: TableField[] = [
   {
     key: "name",
-    label: "Navn",
+    label: "Name",
     thClass: "text-left",
     tdClass: "text-left vertical-center"
   },
   {
     key: "category",
-    label: "Kategori",
+    label: "Category",
     thClass: "text-right",
     tdClass: "text-right vertical-center"
   },
   {
     key: "force",
-    label: "Type",
+    label: "Force",
     thClass: "text-right",
     tdClass: "text-right vertical-center"
   },
   {
     key: "level",
-    label: "Sværhedsgrad",
+    label: "Level",
     thClass: "text-right",
     tdClass: "text-right vertical-center"
   },
   {
     key: "primaryMuscles",
-    label: "Primære muskelgrupper",
+    label: "Primary Muscles",
     thClass: "text-right",
     tdClass: "text-right vertical-center",
     sortable: false
   },
   {
     key: "secondaryMuscles",
-    label: "Sekundære muskelgrupper",
+    label: "Secondary Muscles",
     thClass: "text-right",
     tdClass: "text-right vertical-center",
     sortable: false
   },
   {
     key: "details",
-    label: "Detaljer",
+    label: "Details",
     thClass: "text-right",
     tdClass: "text-right vertical-center",
     sortable: false
@@ -67,7 +67,7 @@ const fields: TableField[] = [
   <Container>
     <Row>
       <Col>
-        <h1>ExcerciseOverview</h1>
+        <h1>Excercise Overview</h1>
       </Col>
     </Row>
     <Row>

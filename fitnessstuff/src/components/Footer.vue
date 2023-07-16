@@ -6,9 +6,9 @@ import AudioButton from "@/components/AudioButton.vue"
     <div id="container">
         <div id="cookies">
             <div id="cookies--cookies">
-            <audio-button class="mt-2" text="Ændre cookiesamtykke"></audio-button>
+            <audio-button class="mt-2" text="Change cookie consemst"></audio-button>
             <button class="btn btn-secondary mt-2 mb-2">
-              <router-link class="cookie-link"  to="/cookie-og-privatlivspolitik/">Cookie-og privatlivspolitik</router-link>
+              <router-link class="cookie-link"  to="/cookie-og-privatlivspolitik/">Cookie and privacy policy</router-link>
             </button>
             </div>
         </div>
