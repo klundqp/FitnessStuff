@@ -1,0 +1,42 @@
+{
+  "name": "fitnessstuff",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "dev:mock": "set VITE_USE_MOCK=true && vite",
+    "build": "run-p type-check build-only",
+    "preview": "vite preview --port 4173",
+    "build-only": "vite build",
+    "type-check": "vue-tsc --noEmit",
+    "api-client": "nswag openapi2tsclient /input:https://ski-dev-api-apim.azure-api.net/supplier-report/v1/swagger /output:src/apis/SkiApiClient.ts /template:axios",
+    "api-client:local": "nswag openapi2tsclient /input:http://localhost:7071/api/swagger.json /output:src/apis/SkiApiClient.ts /template:axios"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.6",
+    "axios": "^0.27.2",
+    "bootstrap": "^5.2.2",
+    "bootstrap-icons": "^1.9.1",
+    "date-fns": "^2.29.3",
+    "pinia": "^2.0.21",
+    "sass": "^1.55.0",
+    "vue": "^3.2.38",
+    "vue-lite-youtube-embed": "^1.2.0",
+    "vue-router": "^4.1.5"
+  },
+  "devDependencies": {
+    "@types/bootstrap": "^5.2.4",
+    "@types/node": "^16.11.68",
+    "@vitejs/plugin-vue": "^3.0.3",
+    "@vitejs/plugin-vue-jsx": "^2.0.1",
+    "@vue/tsconfig": "^0.1.3",
+    "miragejs": "^0.1.45",
+    "npm-run-all": "^4.1.5",
+    "nswag": "^13.17.0",
+    "typescript": "~4.7.4",
+    "vite": "^3.0.9",
+    "vite-plugin-mkcert": "^1.10.1",
+    "vue-tsc": "^0.40.7"
+  }
+}
