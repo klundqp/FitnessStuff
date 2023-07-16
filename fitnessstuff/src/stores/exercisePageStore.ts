@@ -1,9 +1,20 @@
 import { defineStore } from "pinia";
-import { ref } from "vue";
-import { useRouter } from "vue-router";
+import { getExerciseByName } from "@/api/apiMock";
+import type { Exercise } from "@/models/exercise";
 
 export const useExcercisePageStore = defineStore("excercisePageStore", {
     state: () => ({
-        excerciseId: ""
-    })
+        excerciseId: "",
+        exercise: {} as Exercise|null
+    }),
+    getters: {
+        getExercise(): Exercise|null {
+            return this.exercise;
+        }
+    },
+    actions: {
+        load() {
+            this.exercise = getExerciseByName(this.excerciseId) ?? null;
+        }
+    }
 });
