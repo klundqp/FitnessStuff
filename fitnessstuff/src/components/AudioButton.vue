@@ -34,7 +34,7 @@ export default defineComponent({
 
 <template>
     <div>
-        <button class="btn" v-on:click="toggleAudio">{{ text }}</button>
+        <button class="btn btn-primary" v-on:click="toggleAudio">{{ text }}</button>
         <audio
             hidden="true"
             ref="audio"
