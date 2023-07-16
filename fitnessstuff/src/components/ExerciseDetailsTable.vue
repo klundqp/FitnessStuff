@@ -10,12 +10,8 @@ const props = defineProps<{
   sortBy?: string;
 }>();
 
-const capitalizeItem = (item: string): string => {
-    return item === null ? "" : item.charAt(0).toUpperCase() + item.slice(1);
-}
-
-const replaceSlash = (item: string): string => {
-    return item === null ? "" : item.replace("/", "-");
+const capitalizeItem = (item: string|undefined): string => {
+    return item === undefined ? "" : item.charAt(0).toUpperCase() + item.slice(1);
 }
 
 </script>
@@ -37,27 +33,15 @@ const replaceSlash = (item: string): string => {
             </div>
         </template>
         <template v-slot:cell(secondaryMuscles)="exercise: Exercise">
-            <div v-if="exercise.secondaryMuscles.length > 0">
-                <div v-for="muscle in exercise.secondaryMuscles">
-                    {{ capitalizeItem(muscle) }}
-                </div>
+            <div v-if="exercise.secondaryMuscles?.length > 0">
+                <ul v-for="muscle in exercise.secondaryMuscles">
+                    <li>{{ capitalizeItem(muscle) }}</li>
+                </ul>
             </div>
             <div v-else></div>
         </template>
-        <template v-slot:cell(details)="exercise: Exercise">
-            <Button class="btn btn-primary">
-                <router-link
-                    class="link-text"
-                    :to="{
-                        name: 'ExercisePage',
-                        params: {
-                            id: replaceSlash(exercise.name)
-                        },
-                    }"
-                >
-                    Detaljer
-                </router-link>
-            </Button>
+        <template v-slot:cell(equipment)="exercise: Exercise">
+            {{ capitalizeItem(exercise.equipment) }}
         </template>
     </BaseTable>
 </template>

@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 import type { Exercise } from "@/models/exercise"
-import { exercises } from "@/data/exercises.json"
+import { getExercises } from "@/api/apiMock";
 
 export const useExcerciseOverviewStore = defineStore("excerciseOverviewStore", {
     state: () => ({
@@ -14,7 +14,7 @@ export const useExcerciseOverviewStore = defineStore("excerciseOverviewStore", {
     },
     actions: {
         load() {
-            this.excerciseList = exercises as Exercise[];
+            this.excerciseList = getExercises();
         }
     }
 });

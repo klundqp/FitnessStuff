@@ -156,7 +156,21 @@ const toggleSort = (field: TableField) => {
   text-align: left;
 }
 
+.text-center{
+  text-align: center;
+}
+
 .text-right{
   text-align: right;
+}
+
+.vertical-center{
+  vertical-align: middle;
+}
+
+.collect-end{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 </style>
