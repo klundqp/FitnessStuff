@@ -17,7 +17,7 @@ const capitalizeItem = (item: string|undefined): string => {
 </script>
 
 <template>
-    <BaseTable :items="items" :fields="fields" sortable>
+    <BaseTable :items="items" :fields="fields" sortable :stacked="true">
         <template v-slot:cell(force)="exercise: Exercise">
             {{ exercise.force !== undefined ? capitalizeItem(exercise.force) : "" }}
         </template>
@@ -33,10 +33,13 @@ const capitalizeItem = (item: string|undefined): string => {
             </div>
         </template>
         <template v-slot:cell(secondaryMuscles)="exercise: Exercise">
-            <div v-if="exercise.secondaryMuscles?.length > 0">
-                <ul v-for="muscle in exercise.secondaryMuscles">
+            <div v-if="exercise.secondaryMuscles?.length === 1">
+                {{ capitalizeItem(exercise.secondaryMuscles[0]) }}
+            </div>
+            <div v-if="exercise.secondaryMuscles?.length > 1">
+                <ol v-for="muscle in exercise.secondaryMuscles">
                     <li>{{ capitalizeItem(muscle) }}</li>
-                </ul>
+                </ol>
             </div>
             <div v-else></div>
         </template>
