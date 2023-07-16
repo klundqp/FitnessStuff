@@ -11,7 +11,7 @@ const props = defineProps<{
 }>();
 
 const capitalizeItem = (item: string|undefined): string => {
-    return item === undefined ? "" : item.charAt(0).toUpperCase() + item.slice(1);
+    return (item === undefined || item === null)? "" : item.charAt(0).toUpperCase() + item.slice(1);
 }
 
 </script>
@@ -41,7 +41,9 @@ const capitalizeItem = (item: string|undefined): string => {
             <div v-else></div>
         </template>
         <template v-slot:cell(equipment)="exercise: Exercise">
-            {{ capitalizeItem(exercise.equipment) }}
+            <div v-if="exercise.equipment !== undefined">
+                {{ capitalizeItem(exercise.equipment) }}
+            </div>
         </template>
     </BaseTable>
 </template>

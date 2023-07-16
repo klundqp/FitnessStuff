@@ -5,6 +5,7 @@ import Col from "@/components/Bootstrap/layout/Col.vue";
 import Row from "@/components/Bootstrap/layout/Row.vue";
 import type { TableField } from "@/components/Bootstrap/BaseTable.vue";
 import ExerciseTable from "@/components/ExerciseTable.vue";
+import TextField from "@/components/Bootstrap/TextField.vue"
 import { useExcerciseOverviewStore } from '../stores/excerciseOverviewStore';
 
 const store = useExcerciseOverviewStore();
@@ -72,11 +73,50 @@ const fields: TableField[] = [
     </Row>
     <Row>
       <Col>
-        <input type="text" v-model="store.text" placeholder="Excercise">
+        <TextField
+            v-model:value="store.query.name"
+            name="name"
+            placeholder="Exercise name"
+          />
+      </Col>
+      <Col>
+        <TextField
+            v-model:value="store.query.category"
+            name="category"
+            placeholder="Exercise category"
+          />
+      </Col>
+      <Col>
+        <TextField
+            v-model:value="store.query.force"
+            name="force"
+            placeholder="Exercise force"
+          />
+      </Col>
+      <Col>
+        <TextField
+            v-model:value="store.query.level"
+            name="level"
+            placeholder="Exercise level"
+          />
+      </Col>
+      <Col>
+        <TextField
+            v-model:value="store.query.primary"
+            name="primaryMuscle"
+            placeholder="Primary muscle"
+          />
+      </Col>
+      <Col>
+        <TextField
+            v-model:value="store.query.secondary"
+            name="secondaryMuscle"
+            placeholder="Secondary muscle"
+          />
       </Col>
     </Row>
     <Row>
-      <ExerciseTable :items="store.excerciseList" :fields="fields" sortable>
+      <ExerciseTable :items="store.filteredExercises" :fields="fields" sortable>
       </ExerciseTable>
     </Row>
   </Container>
