@@ -27,36 +27,36 @@ const fields: TableField[] = [
   {
     key: "force",
     label: "Force",
-    thClass: "text-right",
-    tdClass: "text-right vertical-center",
+    thClass: "text-left",
+    tdClass: "text-left vertical-center",
     sortable: false
   },
   {
     key: "level",
     label: "Level",
-    thClass: "text-center",
-    tdClass: "text-center vertical-center",
+    thClass: "text-left",
+    tdClass: "text-left vertical-center",
     sortable: false
   },
   {
     key: "primaryMuscles",
     label: "Primary Muscles",
-    thClass: "text-center",
-    tdClass: "text-center vertical-center",
+    thClass: "text-left",
+    tdClass: "text-left vertical-center",
     sortable: false
   },
   {
     key: "secondaryMuscles",
     label: "Secondary Muscles",
-    thClass: "text-right",
-    tdClass: "text-right vertical-center collect-end",
+    thClass: "text-left",
+    tdClass: "text-left vertical-center",
     sortable: false
   },
   {
     key: "equipment",
     label: "Equipment",
-    thClass: "text-right",
-    tdClass: "text-right vertical-center",
+    thClass: "text-left",
+    tdClass: "text-left vertical-center",
     sortable: false
   }
 ];
@@ -79,7 +79,7 @@ const fields: TableField[] = [
         </Col>
       </Row>
       <Row>
-        <Col>
+        <Col :width=3>
           <h2>Properties</h2>
           <ExerciseDetailsTable :items="[store.exercise]" :fields="fields" :sortable="false"></ExerciseDetailsTable>
         </Col>
