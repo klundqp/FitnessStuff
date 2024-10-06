@@ -1,13 +1,14 @@
 <script setup lang="ts">
 import BaseTable, { TableField } from "@/components/Bootstrap/BaseTable.vue"
+import AppLink from "@/components/Atoms/AppLink.vue"
 import type { Exercise } from "@/models/exercise";
 
 const props = defineProps<{
-  fields: TableField[];
-  items: any[];
-  stacked?: boolean;
-  sortable?: boolean;
-  sortBy?: string;
+    fields: TableField[];
+    items: any[];
+    stacked?: boolean;
+    sortable?: boolean;
+    sortBy?: string;
 }>();
 
 const capitalizeItem = (item: string): string => {
@@ -45,19 +46,7 @@ const replaceSlash = (item: string): string => {
             <div v-else></div>
         </template>
         <template v-slot:cell(details)="exercise: Exercise">
-            <Button class="btn btn-primary">
-                <router-link
-                    class="link-text"
-                    :to="{
-                        name: 'ExercisePage',
-                        params: {
-                            id: replaceSlash(exercise.name)
-                        },
-                    }"
-                >
-                    Detaljer
-                </router-link>
-            </Button>
+            <AppLink route-name="ExercisePage" :id="replaceSlash(exercise.name)" text="Details" variant="primary"></AppLink>
         </template>
     </BaseTable>
 </template>
