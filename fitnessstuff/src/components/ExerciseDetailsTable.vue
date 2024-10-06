@@ -11,7 +11,7 @@ const props = defineProps<{
 }>();
 
 const capitalizeItem = (item: string|undefined): string => {
-    return item === undefined ? "" : item.charAt(0).toUpperCase() + item.slice(1);
+    return item === undefined || item === null ? "" : item.charAt(0).toUpperCase() + item.slice(1);
 }
 
 </script>
