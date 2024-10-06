@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Footer from "./components/Footer.vue"
+import Footer from "./components/Molecules/Footer.vue"
 import NavigationBar from "./components/Bootstrap/Navigation/NavigationBar.vue"
 </script>
 
