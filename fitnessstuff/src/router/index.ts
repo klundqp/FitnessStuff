@@ -7,19 +7,19 @@ const router = createRouter({
       path: "/",
       name: "Overview",
       meta: { securedRoute: true },
-      component: () => import("../Views/ExcerciseOverview.vue"),
+      component: () => import("../views/ExcerciseOverview.vue"),
     },
     {
       path: "/exercise/:id",
       name: "ExercisePage",
       meta: { securedRoute: true },
-      component: () => import("../Views/ExcercisePage.vue"),
+      component: () => import("../views/ExcercisePage.vue"),
     },
     {
       path: "/cookie-og-privatlivspolitik/",
       name: "CookiePage",
       meta: { securedRoute: true },
-      component: () => import("../Views/CookiePage.vue"),
+      component: () => import("../views/CookiePage.vue"),
     }
   ],
   linkActiveClass: "active",
