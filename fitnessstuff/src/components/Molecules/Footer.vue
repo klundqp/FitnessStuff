@@ -9,7 +9,7 @@ import AudioButton from "@/components/Atoms/AudioButton.vue"
     <div id="cookies">
       <div id="cookies--cookies">
         <AudioButton text="Change cookie consent"></AudioButton>
-        <AppLink to="/cookie-og-privatlivspolitik/" text="Cookie and privacy policy"></AppLink>
+        <AppLink route-name="CookiePage" text="Cookie and privacy policy"></AppLink>
       </div>
     </div>
   </div>
